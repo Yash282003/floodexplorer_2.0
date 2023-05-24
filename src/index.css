@@ -1,13 +1,111 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: 'Tilt Warp', cursive;
+  box-sizing: border-box;
+  
+}
+a{
+  text-decoration: none;
+  color: antiquewhite;
+}
+a:hover{
+  color: white;
+  text-decoration: none;
+}
+.flex-div{
+  display: flex;
+  align-items: center;
+}
+nav{
+  padding: 10px 2%;
+  
+  box-shadow: 1px 2px gray;
+  padding: 10px 2%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: rgb(71, 61, 61);
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.nav-middle{
+  margin-left:50px ;
+}
+.nav-middle a{
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+}
+.nav-right a{
+margin-left: 350px;
+
+}
+.brand{
+  font-size: 30px;
+  user-select: none;
+  color: white;
+}
+.nav-align{
+  width: 40%; 
+
+}
+a span{
+  padding: 0;
+}
+/* .sidebar header{
+  font-size: 20px;
+  text-align: center;
+  line-height: 50px;
+  color: antiquewhite;
+  user-select: none;
+  background-color: rgb(109, 94, 94);
+
+  
+} */
+/* .sidebar{
+  position: fixed;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background-color: rgb(143, 119, 93);
+}
+.bg-red-500{
+  background-color: red;
+}
+.centered{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bg-green-500{
+  background-color: green;
+} */
+.sidebar_menu{
+  width: 77vw;
+  height: 100vh;
+  background-color: rgb(215, 146, 56);
+  box-shadow: 1px 2px rgb(142, 106, 106);
+  z-index: 4000;
+}
+.sidebar{
+  float: left;
+  overflow: auto;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.input-group input{
+  width: 50px;
 }
+
+.leaflet-container{
+height: 83vh;
+width: 100%;
+
+}
+
+
+
+
+
+
+
