@@ -25,6 +25,19 @@ overflow: auto;
     left: -100%;
     transition: 850ms;
   }
+  .nav-menu2 {
+    background-color: #060b26;
+    width: 359px;
+    height: 85vh;
+    /* overflow-y: scroll; */
+    display: flex;
+    justify-content: center;
+    position: fixed;
+overflow: auto;
+    margin-top: 125px;
+    left: -100%;
+    transition: 850ms;
+  }
   ::-webkit-scrollbar{
     width: 6px;
   }
@@ -39,8 +52,12 @@ overflow: auto;
     left: 0;
     transition: 300ms;
   }
+  .nav-menu.active2 {
+    left: 0;
+    transition: 300ms;
+  }
   
-  .nav-text {
+  /* .nav-text {
     display: flex;
     flex: start;
     align-items: center;
@@ -63,7 +80,7 @@ overflow: auto;
   
   .nav-text a:hover {
     background-color: #1a83ff;
-  }
+  } */
   
   .nav-menu-items {
     width: 100%;

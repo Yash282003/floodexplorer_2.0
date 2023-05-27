@@ -40,9 +40,10 @@ import { useEffect, useContext } from 'react'
 import * as L from "leaflet";
 import dataContext from './datacontext';
 import 'leaflet/dist/leaflet.css';
+
 const Map = () => {
   const { floodData, setFloodData } = useContext(dataContext);
-  const {isSideBarOpen,setIsSideBarOpen}=useContext(dataContext)
+  const { isSideBarOpen, setIsSideBarOpen } = useContext(dataContext)
 
   const style2 = {
     display: 'block'
@@ -68,9 +69,11 @@ const Map = () => {
 
     }).setView([22.9074872, 79.07306671], 13);
     var googleHybrid = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 4,
+      maxZoom: 10,
       subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
     }).addTo(map);
+    // var marker = new L.Marker([17.385044, 78.486671]).addTo(map)
+    // L.marker([50.5, 30.5]).addTo(map);
     var latlngs = [
       [29.83900608249045, 77.90231862375538],
       [29.83900608249045, 77.95107045481006],
@@ -80,12 +83,24 @@ const Map = () => {
 
     ];
     floodData?.forEach((e) => {
-      const someData = e.flooddata[0].complete_geojson_geometry
-      console.log(someData)
-      L.geoJSON([someData]).addTo(map);
+      const someData = e?.flooddata[0]?.complete_geojson_geometry ? JSON.parse(replaceQuotes(e?.flooddata[0]?.complete_geojson_geometry)) : 
+      { 'type': 'FeatureCollection', 'features': [{ 'type': 'Feature', 'properties': {}, 'geometry': { 'type': 'Polygon', 'coordinates':
+       [[[84.1898, 24.6099], [86.1898, 24.6099], [86.1898, 26.6099], [84.1898, 26.6099], [84.1898, 24.6099]]] } }] }
+      // console.log(someData)
+      L.geoJSON(someData).addTo(map);
     })
 
+    function replaceQuotes(str) {
+      var replacedStr = str.replace(/['"]/g, function (match) {
+        if (match === '"') {  
+          return "'";
+        } else {
+          return '"';
+        }
+      });
 
+      return replacedStr;
+    }
 
 
 
@@ -109,7 +124,7 @@ const Map = () => {
 
   }, [floodData])
   return (
-    <div style={{ display: 'block',overflow:'hidden',width: isSideBarOpen ? "76.4vw" :"100vw",position:'absolute', right:'0' }} className='map' id="map">
+    <div style={{ display: 'block', overflow: 'hidden', width: isSideBarOpen ? "76.4vw" : "100vw", position: 'absolute', right: '0' }} className='map' id="map">
 
     </div>
   )
