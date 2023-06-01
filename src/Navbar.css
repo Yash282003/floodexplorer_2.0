@@ -25,19 +25,7 @@ overflow: auto;
     left: -100%;
     transition: 850ms;
   }
-  .nav-menu2 {
-    background-color: #060b26;
-    width: 359px;
-    height: 85vh;
-    /* overflow-y: scroll; */
-    display: flex;
-    justify-content: center;
-    position: fixed;
-overflow: auto;
-    margin-top: 125px;
-    left: -100%;
-    transition: 850ms;
-  }
+  
   ::-webkit-scrollbar{
     width: 6px;
   }
@@ -49,10 +37,6 @@ overflow: auto;
   }
   
   .nav-menu.active {
-    left: 0;
-    transition: 300ms;
-  }
-  .nav-menu.active2 {
     left: 0;
     transition: 300ms;
   }
@@ -178,7 +162,7 @@ height: auto;
   margin-top: 5px;
 }
 .dropdown-item:hover{
-  background-color: rgb(226, 225, 224);
+  background-color: aliceblue;
 
 }
 .satellite{
